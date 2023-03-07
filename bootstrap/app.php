@@ -25,7 +25,7 @@ $app = new Laravel\Lumen\Application(
 
 $app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +61,7 @@ $app->singleton(
 
 $app->configure('app');
 $app->configure('cors');
+$app->configure('database');
 
 
 /*
@@ -107,6 +108,7 @@ $app->routeMiddleware([
 $app->register(GS\Shared\Infrastructure\Lumen\Provider\CQRSServiceProvider::class);
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 $app->register(Fruitcake\Cors\CorsServiceProvider::class);
+$app->register(\Anik\Form\FormRequestServiceProvider::class);
 
 /*
 
