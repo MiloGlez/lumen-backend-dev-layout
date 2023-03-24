@@ -3,6 +3,7 @@
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 use App\Http\Controllers\Product\CreateProductController;
+use App\Http\Controllers\ProductAllController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,7 @@ $router->group(['prefix' => 'product'], function () use ($router){
      * Function to load route files automatically from routers folder
      */
     $router->post('/create', CreateProductController::class); //Ruta para creado de productos
+    $router->get('/all', ProductAllController::class); 
+
 
 });
